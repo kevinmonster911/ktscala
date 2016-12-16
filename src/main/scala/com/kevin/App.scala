@@ -4,8 +4,17 @@ package com.kevin
  * @author ${user.name}
  */
 object App {
-  
+
+  import java.util.Calendar
+
   def foo(x : Array[String]) = x.foldRight("2")((a,b) => a + b)
+
+  def isFridayThirteen(cal: Calendar): Boolean = {
+    val dayOfWeek = cal.get(Calendar.DAY_OF_WEEK)
+    val dayOfMonth = cal.get(Calendar.DAY_OF_MONTH)
+
+    (dayOfWeek == Calendar.FRIDAY) && (dayOfMonth == 13)
+  }
   
   def main(args : Array[String]) {
     println( "Hello World!" )
@@ -30,6 +39,7 @@ object App {
       Some(breed) <- dogOptions
       upcaseBread <- breed.toUpperCase
     } println(upcaseBread)
+
 
 
   }
